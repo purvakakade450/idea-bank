@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Idea Bank reviewer</title>
+<style>
+:root{--bg:#F5F8F6;--surface:#fff;--ink:#18231F;--muted:#56635E;--line:#DCE4E0;--teal:#17705A;--soft:#E3F3EC;--warn:#FCF2E1;--warn-ink:#69400A;--bad:#FBEEF2;--bad-ink:#70243D;--lav:#EFEEFC;--lav-ink:#3A3285}
+@media (prefers-color-scheme:dark){:root{--bg:#0F1513;--surface:#161E1B;--ink:#E5EDE9;--muted:#9DAAA5;--line:#26312D;--teal:#5CC7A2;--soft:#14302A;--warn:#2E230F;--warn-ink:#F4D49B;--bad:#331B24;--bad-ink:#F4C2D2;--lav:#1F1D38;--lav-ink:#CDC9FA}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55}
+.wrap{max-width:860px;margin:0 auto;padding:28px 20px 60px} h1{font-size:26px;margin:0 0 4px} h2{font-size:19px;margin:24px 0 10px}
+.muted{color:var(--muted)} .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+input,textarea{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:9px 12px;font:inherit}
+input{min-width:280px} textarea{width:100%;min-height:64px}
+button{font:inherit;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:8px 16px;font-weight:600;cursor:pointer}
+button.primary{background:var(--teal);border-color:var(--teal);color:#fff} button.no{background:var(--bad);color:var(--bad-ink)} button:disabled{opacity:.5}
+.tabs{display:flex;gap:8px;margin:18px 0 8px} .tabs button[aria-pressed="true"]{background:var(--soft);border-color:var(--teal);color:var(--teal)}
+.idea{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:16px}
+.idea h3{margin:0 0 6px;font-size:19px} .pill{display:inline-block;font-size:12px;font-weight:700;padding:2px 9px;border-radius:99px;background:var(--soft);margin:0 4px 4px 0}
+.fail{background:var(--bad);color:var(--bad-ink)} .msg{padding:10px 12px;border-radius:10px;background:var(--warn);color:var(--warn-ink);margin:10px 0}
+.k{font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:14px 0 2px}
+.box{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:10px;background:var(--lav);color:var(--lav-ink)}
+.box dt{font-weight:700;margin-top:6px} .box dd{margin:0}
+.done{font-weight:700;color:var(--teal)} a{color:var(--teal)}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Idea Bank reviewer</h1>
+  <p class="muted">Read each idea and decide. Only ideas you approve appear on the website. <a href="/">Back to the site</a></p>
+  <div class="row"><label for="tok" class="muted">Reviewer code</label><input id="tok" type="password" autocomplete="off" placeholder="The code the admin gave you"><button class="primary" id="go">Sign in</button></div>
+  <div id="msg"></div>
+  <div id="main" hidden>
+    <p><b id="who"></b> <span class="muted" id="waiting"></span></p>
+    <div class="tabs" role="group" aria-label="Show">
+      <button type="button" data-st="pending" aria-pressed="true">Waiting for me</button>
+      <button type="button" data-st="approved" aria-pressed="false">I approved</button>
+      <button type="button" data-st="rejected" aria-pressed="false">I rejected</button>
+    </div>
+    <div id="list"></div>
+  </div>
+</div>
+<script>
+(function(){
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const FIELDS={cs:"Computer science",mech:"Mechanical",elec:"Electrical",civil:"Civil",biz:"Business",other:"Other"};
+const CHECKS=[["demand","Do people really need this?"],["today","What do they do today?"],["who","Who needs it most?"],["wedge","Smallest version to sell first"],["seen","Have we seen the struggle?"],["future","Will it matter more later?"]];
+const GATES={pay:"Someone will pay",earn:"Clear revenue",small:"Can start small",proof:"Real proof"};
+let token="",status="pending"; try{token=sessionStorage.getItem("ib-reviewer")||"";}catch(e){} $("#tok").value=token;
+async function api(p,o){o=o||{}; o.headers={"Content-Type":"application/json","X-Reviewer-Token":token}; if(o.body) o.body=JSON.stringify(o.body);
+  const r=await fetch(p,o); const d=await r.json().catch(()=>({})); if(!r.ok) throw new Error(d.error||r.status); return d;}
+async function signIn(){
+  token=$("#tok").value.trim(); try{sessionStorage.setItem("ib-reviewer",token);}catch(e){}
+  try{ const me=await api("/api/review/me"); $("#msg").innerHTML=""; $("#main").hidden=false;
+    $("#who").textContent="Signed in as "+me.name; $("#waiting").textContent="· "+me.waiting+" idea"+(me.waiting===1?"":"s")+" waiting"; loadList(); }
+  catch(e){ $("#main").hidden=true; $("#msg").innerHTML=`<div class="msg">${esc(e.message)}</div>`; }
+}
+function card(i){
+  const roles=Object.keys(i.roles||{}).map(k=>`<dt>${esc(FIELDS[k]||k)}</dt><dd>${esc(i.roles[k])}</dd>`).join("");
+  const m=i.model||{}, c=i.checks||{};
+  return `<div class="idea" id="i${i.id}"><h3>${esc(i.title)} <span class="pill">${i.total}/100</span></h3>
+   <div class="muted">${esc(i.sector)} · ${i.origin==="seed"?"Example":i.origin==="team"?"Made for a team":"From live data"}</div>
+   <div class="k">Problem</div><div>${esc(i.problem)}</div>
+   <div class="k">Business idea</div><div>${esc(i.solution)}</div>
+   <div class="k">Four must-pass rules</div><div>${Object.entries(i.gates||{}).map(([k,g])=>`<span class="pill ${g.pass?"":"fail"}" title="${esc(g.why)}">${GATES[k]||k}: ${g.pass?"pass":"fail"}</span>`).join("")}</div>
+   <div class="k">Who does what</div><dl class="box" style="margin-top:4px">${roles||"—"}</dl>
+   <div class="k">Reality check</div><dl class="box" style="margin-top:4px">${CHECKS.map(([k,q])=>`<dt>${q}</dt><dd>${esc(c[k]||"Not checked")}</dd>`).join("")}</dl>
+   <div class="k">Business model</div><div>${["customer","value","revenue","pricing","costs","channels"].map(k=>`<b>${k[0].toUpperCase()+k.slice(1)}:</b> ${esc(m[k]||"—")}`).join(" · ")}</div>
+   <div class="k">Proof</div>${(i.evidence||[]).length?(i.evidence||[]).slice(0,8).map(e=>`<div><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">${esc(e.title)}</a> <span class="muted">(${esc(e.source)})</span></div>`).join(""):'<div class="muted">No proof links attached.</div>'}
+   ${status==="pending"?`<div class="k">Your note (optional, for the record)</div><label class="sr" for="n${i.id}"></label><textarea id="n${i.id}" maxlength="300" placeholder="Why you approved or rejected"></textarea>
+     <div class="row" style="margin-top:10px"><button class="primary" data-act="approved" data-id="${i.id}">Approve and publish</button><button class="no" data-act="rejected" data-id="${i.id}">Reject</button></div>`
+    :`<p class="done">${status==="approved"?"Published":"Rejected"} by you${i.review_note?": "+esc(i.review_note):""}</p>`}
+  </div>`;
+}
+async function loadList(){
+  try{ const d=await api("/api/review/ideas?status="+status);
+    $("#list").innerHTML=d.ideas.length?d.ideas.map(card).join(""):`<p class="muted">${status==="pending"?"Nothing waiting. New ideas appear here after each data run.":"Nothing here yet."}</p>`;
+  }catch(e){ $("#list").innerHTML=`<div class="msg">${esc(e.message)}</div>`; }
+}
+document.addEventListener("click",async e=>{
+  const t=e.target.closest(".tabs button"); if(t){document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-pressed",b===t)); status=t.dataset.st; loadList(); return;}
+  const b=e.target.closest("[data-act]"); if(!b) return; b.disabled=true;
+  try{ const n=$("#n"+b.dataset.id); await api(`/api/review/ideas/${b.dataset.id}/decision`,{method:"POST",body:{status:b.dataset.act,note:n?n.value:""}}); signIn(); }
+  catch(err){ b.disabled=false; $("#msg").innerHTML=`<div class="msg">${esc(err.message)}</div>`; }
+});
+$("#go").onclick=signIn; $("#tok").addEventListener("keydown",e=>{if(e.key==="Enter") signIn();});
+if(token) signIn();
+})();
+</script>
+</body>
+</html>

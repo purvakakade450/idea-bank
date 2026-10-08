@@ -1,0 +1,367 @@
+[
+ {
+  "id": "s1",
+  "title": "Solar cold rooms farmers rent by the day",
+  "sector": "Farming and food",
+  "product": "mix",
+  "budget": "high",
+  "setting": "rural",
+  "problem": "Small farmers lose part of their harvest because they can't afford cold storage near the farm.",
+  "solution": "Portable solar-powered cold rooms near villages, booked by the day through a simple phone app.",
+  "roles": {
+   "cs": "Booking app and live temperature alerts",
+   "mech": "Cold room, insulation and cooling unit",
+   "elec": "Solar panels, battery and sensors",
+   "civil": "Low-cost base and site setup",
+   "biz": "Pricing, farmer outreach and seed funding"
+  },
+  "model": {
+   "customer": "Small farmers and traders",
+   "value": "Less waste, better prices",
+   "revenue": "Daily rent per crate plus a yearly plan",
+   "pricing": "[₹__] per crate per day",
+   "costs": "Cold rooms, solar kits, upkeep",
+   "channels": "Village markets, farmer groups"
+  },
+  "hours": 45,
+  "months": 6,
+  "scores": {
+   "need": 22,
+   "revenue": 19,
+   "seed": 17,
+   "entre": 12,
+   "impact": 14
+  },
+  "checks": {
+   "demand": "Farmers already sell in a rush at low prices to avoid spoilage.",
+   "today": "Sell immediately, or let produce spoil.",
+   "who": "Vegetable and fruit farmers far from cold storage.",
+   "wedge": "One cold room at one village market, rented per crate.",
+   "seen": "Talk to 20 farmers at a local mandi about losses.",
+   "future": "Heat waves and food prices keep raising demand for storage."
+  }
+ },
+ {
+  "id": "s2",
+  "title": "Vegetable price alerts and group buying for small restaurants",
+  "sector": "Farming and food",
+  "product": "app",
+  "budget": "low",
+  "setting": "city",
+  "problem": "Small restaurants can't plan costs because vegetable prices jump without warning.",
+  "solution": "An app that alerts owners to price changes and pools nearby orders for bulk discounts.",
+  "roles": {
+   "cs": "Price tracking, alerts and ordering app",
+   "biz": "Supplier deals, restaurant sign-ups and pricing"
+  },
+  "model": {
+   "customer": "Small restaurants and cloud kitchens",
+   "value": "Steady costs, lower bills",
+   "revenue": "Monthly subscription plus commission on group orders",
+   "pricing": "[₹__] per month",
+   "costs": "App upkeep, sales team",
+   "channels": "Restaurant associations, WhatsApp groups"
+  },
+  "hours": 20,
+  "months": 3,
+  "scores": {
+   "need": 21,
+   "revenue": 18,
+   "seed": 14,
+   "entre": 14,
+   "impact": 9
+  },
+  "checks": {
+   "demand": "Owners call several suppliers daily to compare prices.",
+   "today": "Phone calls, WhatsApp groups and guesswork.",
+   "who": "Restaurants with 10–40 seats buying produce daily.",
+   "wedge": "Price alerts for 10 vegetables in one neighbourhood.",
+   "seen": "Interview 15 owners about weekly cost swings.",
+   "future": "More small food businesses open every year."
+  }
+ },
+ {
+  "id": "s3",
+  "title": "Low-cost EV charging points at neighbourhood shops",
+  "sector": "Mobility",
+  "product": "mix",
+  "budget": "mid",
+  "setting": "town",
+  "problem": "Electric scooter owners in smaller towns can't find a place to charge.",
+  "solution": "Simple charging points at local shops, which earn a share of every charge.",
+  "roles": {
+   "elec": "Charger design, safety and metering",
+   "cs": "App to find, book and pay for chargers",
+   "civil": "Safe mounting and site checks",
+   "biz": "Shop partnerships and pricing"
+  },
+  "model": {
+   "customer": "EV scooter and e-rickshaw owners",
+   "value": "Charge nearby, ride further",
+   "revenue": "Per-charge fee split with the shop",
+   "pricing": "[₹__] per charge",
+   "costs": "Chargers, installation, maintenance",
+   "channels": "Local shops, rider groups"
+  },
+  "hours": 40,
+  "months": 6,
+  "scores": {
+   "need": 20,
+   "revenue": 18,
+   "seed": 17,
+   "entre": 11,
+   "impact": 12
+  },
+  "checks": {
+   "demand": "EV sales are growing faster than charging in small towns.",
+   "today": "Charge only at home, which limits distance.",
+   "who": "Delivery riders and e-rickshaw drivers.",
+   "wedge": "Five chargers at five shops on one busy road.",
+   "seen": "Ride along with delivery riders for a day.",
+   "future": "Government push for EVs keeps growing the market."
+  }
+ },
+ {
+  "id": "s4",
+  "title": "Rainwater harvesting kits for housing societies",
+  "sector": "Water",
+  "product": "device",
+  "budget": "mid",
+  "setting": "city",
+  "problem": "Housing societies buy tanker water in summer while rainwater runs off their roofs.",
+  "solution": "A ready-to-install harvesting and filter kit with an app that shows water saved.",
+  "roles": {
+   "civil": "Roof and tank layout, installation plan",
+   "mech": "Filter and pump design",
+   "cs": "Water-saved dashboard for residents",
+   "biz": "Society sales and service plans"
+  },
+  "model": {
+   "customer": "Housing society committees",
+   "value": "Lower tanker bills",
+   "revenue": "Kit sale plus yearly maintenance plan",
+   "pricing": "[₹__] per kit",
+   "costs": "Filters, tanks, installation crew",
+   "channels": "Society secretaries, builders"
+  },
+  "hours": 35,
+  "months": 5,
+  "scores": {
+   "need": 19,
+   "revenue": 16,
+   "seed": 14,
+   "entre": 12,
+   "impact": 14
+  },
+  "checks": {
+   "demand": "Societies spend heavily on tankers every summer.",
+   "today": "Tankers and deeper borewells.",
+   "who": "Committees in water-stressed city areas.",
+   "wedge": "One pilot kit in one society with measured savings.",
+   "seen": "Ask 10 society secretaries about tanker bills.",
+   "future": "Water rules and shortages are getting stricter."
+  }
+ },
+ {
+  "id": "s5",
+  "title": "Machine health alerts for small factories",
+  "sector": "Manufacturing",
+  "product": "mix",
+  "budget": "mid",
+  "setting": "town",
+  "problem": "Small factories lose days of work when a machine breaks without warning.",
+  "solution": "Clip-on vibration and heat sensors that warn owners before a machine fails.",
+  "roles": {
+   "mech": "Which machines fail and how, sensor placement",
+   "elec": "Sensor hardware and wireless link",
+   "cs": "Alerts and breakdown prediction app",
+   "biz": "Factory sales and pilot deals"
+  },
+  "model": {
+   "customer": "Small factory owners",
+   "value": "Fewer breakdowns, no lost orders",
+   "revenue": "Sensor kit plus monthly monitoring fee",
+   "pricing": "[₹__] per machine per month",
+   "costs": "Sensors, cloud, support",
+   "channels": "Industrial estates, machine dealers"
+  },
+  "hours": 40,
+  "months": 6,
+  "scores": {
+   "need": 21,
+   "revenue": 19,
+   "seed": 17,
+   "entre": 11,
+   "impact": 11
+  },
+  "checks": {
+   "demand": "Downtime costs owners orders and wages.",
+   "today": "Fix machines only after they break.",
+   "who": "Factories with 5–50 machines running daily.",
+   "wedge": "Monitor one key machine in three factories.",
+   "seen": "Visit an industrial estate and log breakdowns.",
+   "future": "More factories are adopting simple digital tools."
+  }
+ },
+ {
+  "id": "s6",
+  "title": "WhatsApp tutor in local languages",
+  "sector": "Education",
+  "product": "app",
+  "budget": "low",
+  "setting": "town",
+  "problem": "Students in smaller towns get stuck on homework with no one to ask in their own language.",
+  "solution": "An AI tutor on WhatsApp that explains lessons step by step in local languages.",
+  "roles": {
+   "cs": "AI tutor, WhatsApp bot and lesson content",
+   "biz": "Parent marketing and school partnerships"
+  },
+  "model": {
+   "customer": "Parents of students in classes 6–12",
+   "value": "Help any time, in their language",
+   "revenue": "Monthly subscription and school plans",
+   "pricing": "[₹__] per month",
+   "costs": "AI usage, content, marketing",
+   "channels": "Schools, parent groups"
+  },
+  "hours": 20,
+  "months": 3,
+  "scores": {
+   "need": 22,
+   "revenue": 15,
+   "seed": 16,
+   "entre": 14,
+   "impact": 14
+  },
+  "checks": {
+   "demand": "Parents already pay for tuition they can barely afford.",
+   "today": "Expensive tuition, or no help at all.",
+   "who": "Students in regional-medium schools.",
+   "wedge": "Maths help in one language for one class.",
+   "seen": "Run a free pilot with 30 students.",
+   "future": "Smartphones keep reaching more homes."
+  }
+ },
+ {
+  "id": "s7",
+  "title": "Dust monitors for construction sites",
+  "sector": "Clean air",
+  "product": "device",
+  "budget": "mid",
+  "setting": "city",
+  "problem": "Construction sites face fines and complaints over dust but can't measure it.",
+  "solution": "Low-cost dust sensors with alerts that switch on water sprinklers automatically.",
+  "roles": {
+   "elec": "Dust sensor and sprinkler controller",
+   "civil": "Site layout and placement rules",
+   "cs": "Live dashboard and reports",
+   "biz": "Builder sales"
+  },
+  "model": {
+   "customer": "Builders and site contractors",
+   "value": "Avoid fines, cleaner air",
+   "revenue": "Monthly rental per site",
+   "pricing": "[₹__] per site per month",
+   "costs": "Sensors, sprinkler controls, field team",
+   "channels": "Builder associations, site engineers"
+  },
+  "hours": 30,
+  "months": 4,
+  "scores": {
+   "need": 18,
+   "revenue": 17,
+   "seed": 14,
+   "entre": 12,
+   "impact": 13
+  },
+  "checks": {
+   "demand": "Pollution rules now fine sites that skip dust control.",
+   "today": "Manual spraying with no records.",
+   "who": "Builders with 2–10 active sites.",
+   "wedge": "One sensor plus report for one site.",
+   "seen": "Talk to site engineers about inspections.",
+   "future": "Air-quality rules tighten every winter."
+  }
+ },
+ {
+  "id": "s8",
+  "title": "Drone spraying service for small farms",
+  "sector": "Farming and food",
+  "product": "service",
+  "budget": "high",
+  "setting": "rural",
+  "problem": "Farmers struggle to find labour for spraying, and manual spraying wastes chemicals.",
+  "solution": "A book-by-the-acre drone spraying service run by trained local operators.",
+  "roles": {
+   "mech": "Drone frame, tank and nozzle setup",
+   "elec": "Battery, motors and flight electronics",
+   "cs": "Booking app and field mapping",
+   "biz": "Farmer groups, training and licences"
+  },
+  "model": {
+   "customer": "Small and mid-size farmers",
+   "value": "Faster spraying, less chemical",
+   "revenue": "Fee per acre sprayed",
+   "pricing": "[₹__] per acre",
+   "costs": "Drones, operators, licences",
+   "channels": "Farmer groups, input dealers"
+  },
+  "hours": 50,
+  "months": 8,
+  "scores": {
+   "need": 19,
+   "revenue": 17,
+   "seed": 15,
+   "entre": 9,
+   "impact": 12
+  },
+  "checks": {
+   "demand": "Labour shortages at spraying time are common.",
+   "today": "Hired labour with backpack sprayers.",
+   "who": "Farmer groups with 50+ acres together.",
+   "wedge": "Spraying in one taluka for one crop season.",
+   "seen": "Join a spraying day and time the work.",
+   "future": "Drone rules and subsidies are opening this market."
+  }
+ },
+ {
+  "id": "s9",
+  "title": "Quick-build shelters for construction workers",
+  "sector": "Housing",
+  "product": "device",
+  "budget": "high",
+  "setting": "city",
+  "problem": "Construction workers often live in unsafe, hot temporary sheds.",
+  "solution": "Modular, heat-reducing shelters that builders set up and move between sites.",
+  "roles": {
+   "civil": "Modular structure and foundations",
+   "mech": "Panels, joints and ventilation",
+   "biz": "Builder rentals and financing"
+  },
+  "model": {
+   "customer": "Builders and labour contractors",
+   "value": "Safer, cooler worker housing",
+   "revenue": "Rent per unit per month",
+   "pricing": "[₹__] per unit per month",
+   "costs": "Panels, transport, assembly",
+   "channels": "Builders, contractor networks"
+  },
+  "hours": 35,
+  "months": 6,
+  "scores": {
+   "need": 17,
+   "revenue": 14,
+   "seed": 12,
+   "entre": 11,
+   "impact": 15
+  },
+  "checks": {
+   "demand": "Builders must meet new welfare norms for workers.",
+   "today": "Tin sheds rebuilt at every site.",
+   "who": "Builders running projects over a year.",
+   "wedge": "Ten units at one site on rent.",
+   "seen": "Visit three sites and note living conditions.",
+   "future": "Worker welfare rules are getting stricter."
+  }
+ }
+]

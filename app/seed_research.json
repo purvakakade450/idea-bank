@@ -1,0 +1,1185 @@
+[
+ {
+  "title": "Shared drying and cooling pods for farmer groups",
+  "sector": "Farming and food",
+  "product": "device",
+  "budget": "mid",
+  "setting": "rural",
+  "problem": "Small and marginal farmers (86% of landholders) lose income when produce spoils or is rejected, because storage, drying and cooling are out of reach.",
+  "solution": "Low-cost solar dryer and cooling pods placed at farmer-group sites and rented per batch.",
+  "roles": {
+   "mech": "Dryer and pod design, insulation",
+   "elec": "Solar supply, fans and moisture sensors",
+   "cs": "Batch booking and quality log",
+   "civil": "Platform and shade structure",
+   "biz": "Farmer-group deals, rent plan"
+  },
+  "model": {
+   "customer": "Farmer producer groups",
+   "value": "Less spoilage, better price",
+   "revenue": "Rent per batch plus yearly group plan",
+   "pricing": "[₹__] per batch",
+   "costs": "Pods, solar kit, upkeep",
+   "channels": "FPOs, village markets"
+  },
+  "hours": 40,
+  "months": 6,
+  "scores": {
+   "need": 22,
+   "revenue": 18,
+   "seed": 16,
+   "entre": 12,
+   "impact": 14
+  },
+  "checks": {
+   "demand": "Post-harvest losses are estimated at 68.9 million tonnes a year.",
+   "today": "Sell fast at low price or lose the crop.",
+   "who": "Vegetable and fruit growers in groups of 20+.",
+   "wedge": "One dryer pod rented by one FPO for one season.",
+   "seen": "Visit 15 farmers and record what they lose each month.",
+   "future": "Heat and unstable weather keep raising spoilage risk."
+  },
+  "evidence": [
+   {
+    "title": "RESET 2026: dialogues to reduce food loss and waste in India (WRI India)",
+    "url": "https://wri-india.org/events/2026/7/reset-2026-dialogues-reduce-food-loss-and-waste",
+    "source": "research"
+   },
+   {
+    "title": "RESET 2026 background note (WRI India)",
+    "url": "https://wri-india.org/sites/default/files/2026-07/reset-2026_background-note.pdf",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Invoice tracker and polite reminder tool for small suppliers",
+  "sector": "Finance",
+  "product": "app",
+  "budget": "low",
+  "setting": "city",
+  "problem": "Small businesses wait about 73 days on average to be paid, which locks up cash they need to run the business.",
+  "solution": "App that tracks invoices, sends polite reminders and prepares the paperwork for the MSME dispute process.",
+  "roles": {
+   "cs": "Invoice tracker, reminders, reports",
+   "biz": "Supplier outreach, plans and pricing"
+  },
+  "model": {
+   "customer": "Micro and small suppliers",
+   "value": "Faster payment, less chasing",
+   "revenue": "Monthly plan per business",
+   "pricing": "[₹__] per month",
+   "costs": "App upkeep, support",
+   "channels": "Trade associations, accountants"
+  },
+  "hours": 20,
+  "months": 3,
+  "scores": {
+   "need": 23,
+   "revenue": 18,
+   "seed": 15,
+   "entre": 14,
+   "impact": 12
+  },
+  "checks": {
+   "demand": "Thousands of crores in dues are pending and many cases are over a year old.",
+   "today": "Phone calls, WhatsApp and Excel sheets.",
+   "who": "Small manufacturers selling to larger buyers.",
+   "wedge": "Invoice tracking and reminders for 20 shops.",
+   "seen": "Interview 15 suppliers about their last late payment.",
+   "future": "A new law adds time limits, so tools that follow them will be needed."
+  },
+  "evidence": [
+   {
+    "title": "Indian MSMEs face mounting delayed payments: Recordent report (Telangana Today)",
+    "url": "https://telanganatoday.com/indian-msmes-face-mounting-delayed-payments-recordent-report-reveals",
+    "source": "research"
+   },
+   {
+    "title": "MSME bill could be an IBC moment for delayed payments (Tribune, CRISIL)",
+    "url": "https://www.tribuneindia.com/news/business/msme-bill-could-be-an-ibc-moment-for-delayed-payments-if-implemented-well-crisil-intelligence/",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Street-level flood alerts from low-cost drain sensors",
+  "sector": "Urban infrastructure",
+  "product": "mix",
+  "budget": "mid",
+  "setting": "city",
+  "problem": "Blocked drains turn short heavy rain into street flooding, and residents get no warning of which roads will go under.",
+  "solution": "Cheap water-level sensors in key drains feed a map that warns residents and the ward office.",
+  "roles": {
+   "elec": "Sensors, solar power, radio link",
+   "cs": "Alert map and ward dashboard",
+   "civil": "Drain mapping and sensor mounting",
+   "mech": "Weatherproof housing",
+   "biz": "Resident groups and municipal pilot"
+  },
+  "model": {
+   "customer": "Housing societies and ward offices",
+   "value": "Early warning, quicker cleaning",
+   "revenue": "Society subscription plus pilot fees",
+   "pricing": "[₹__] per sensor per year",
+   "costs": "Sensors, cloud, field visits",
+   "channels": "Resident groups, ward offices"
+  },
+  "hours": 40,
+  "months": 6,
+  "scores": {
+   "need": 21,
+   "revenue": 15,
+   "seed": 15,
+   "entre": 11,
+   "impact": 15
+  },
+  "checks": {
+   "demand": "Cities such as Mumbai, Chennai and Bengaluru flood repeatedly.",
+   "today": "Wait and check social media.",
+   "who": "Residents of low-lying streets.",
+   "wedge": "Five sensors and a text alert for one colony.",
+   "seen": "Walk one flood-prone street and ask 20 residents.",
+   "future": "Heavier rain events are expected to be more frequent."
+  },
+  "evidence": [
+   {
+    "title": "Urban flooding in India: causes, consequences and solutions (Drishti IAS)",
+    "url": "https://www.drishtiias.com/daily-updates/daily-news-editorials/urban-flooding-in-india-causes-consequences-and-solutions/print_manually",
+    "source": "research"
+   },
+   {
+    "title": "Urban flooding in India (Vajiram)",
+    "url": "https://vajiramandravi.com/current-affairs/urban-flooding-in-india/",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Safe e-waste pickup and payment for households",
+  "sector": "Waste",
+  "product": "service",
+  "budget": "low",
+  "setting": "city",
+  "problem": "About 95% of e-waste goes to informal recyclers who burn and acid-soak parts, harming workers, while households get little for old devices.",
+  "solution": "Pickup service that pays a fair price and hands devices to authorised recyclers with a receipt.",
+  "roles": {
+   "cs": "Booking app and tracking",
+   "mech": "Sorting and dismantling set-up",
+   "biz": "Recycler deals, pricing, pickup routes",
+   "civil": "Collection point layout"
+  },
+  "model": {
+   "customer": "Households and small offices",
+   "value": "Fair price, safe disposal",
+   "revenue": "Margin on resale and recycler fees",
+   "pricing": "[₹__] per kg",
+   "costs": "Pickup vehicle, storage",
+   "channels": "Housing societies, colleges"
+  },
+  "hours": 25,
+  "months": 4,
+  "scores": {
+   "need": 20,
+   "revenue": 17,
+   "seed": 15,
+   "entre": 13,
+   "impact": 15
+  },
+  "checks": {
+   "demand": "Formal collection and recycling capacity is thin.",
+   "today": "Sell to a local scrap dealer or keep it at home.",
+   "who": "Residents of apartment societies and small offices.",
+   "wedge": "Pickup from three housing societies once a month.",
+   "seen": "Ask 30 households what they did with their last old phone.",
+   "future": "E-waste volumes keep growing each year."
+  },
+  "evidence": [
+   {
+    "title": "How e-waste crisis continues to plague informal sector (Down To Earth)",
+    "url": "https://www.downtoearth.org.in/waste/how-e-waste-crisis-continues-to-plague-informal-sector-72033",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Village health kiosk with a booked specialist video call",
+  "sector": "Health",
+  "product": "mix",
+  "budget": "mid",
+  "setting": "rural",
+  "problem": "A rural Community Health Centre has about 80% fewer specialists than sanctioned, and one Primary Health Centre serves over 36,000 people.",
+  "solution": "Trained local operator runs a kiosk with basic vitals devices and booked video consults with specialists.",
+  "roles": {
+   "elec": "Vitals devices and power backup",
+   "cs": "Booking, records and video call",
+   "biz": "Operator model and doctor partners",
+   "civil": "Kiosk set-up",
+   "mech": "Compact device cart"
+  },
+  "model": {
+   "customer": "Village families",
+   "value": "Specialist advice near home",
+   "revenue": "Fee per consult plus operator share",
+   "pricing": "[₹__] per consult",
+   "costs": "Devices, internet, training",
+   "channels": "Panchayats, ASHA workers"
+  },
+  "hours": 45,
+  "months": 6,
+  "scores": {
+   "need": 23,
+   "revenue": 16,
+   "seed": 16,
+   "entre": 10,
+   "impact": 15
+  },
+  "checks": {
+   "demand": "Specialist posts in rural centres stay vacant.",
+   "today": "Travel to a town and lose a day's wages.",
+   "who": "Families in villages far from district hospitals.",
+   "wedge": "One kiosk offering two specialist slots a week.",
+   "seen": "Talk to 20 villagers about their last trip for care.",
+   "future": "Demand for tele-consults keeps growing."
+  },
+  "evidence": [
+   {
+    "title": "We don't have enough doctors in rural India, that's why we need telemedicine (BW Disrupt)",
+    "url": "https://bwdisrupt.com/article/we-don%E2%80%99t-have-enough-doctors-in-rural-india-that%E2%80%99s-why-we-need-telemedicine-120121",
+    "source": "research"
+   },
+   {
+    "title": "Is telemedicine filling the gap in tier 2 and 3 cities (BioSpectrum)",
+    "url": "https://www.biospectrumindia.com/views/81/15016/is-telemedicine-filling-the-gap-between-the-tier-2-or-tier-3-cities-.html",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Skill proof portfolios for polytechnic and ITI students",
+  "sector": "Education",
+  "product": "app",
+  "budget": "low",
+  "setting": "town",
+  "problem": "Polytechnic and ITI graduates have low employability scores, and employers cannot easily see what they can actually do.",
+  "solution": "App where students log real projects and get them checked by mentors, giving employers a proof-based profile.",
+  "roles": {
+   "cs": "Portfolio app and verification",
+   "biz": "College tie-ups, employer outreach",
+   "elec": "Lab project templates",
+   "mech": "Workshop project templates"
+  },
+  "model": {
+   "customer": "Polytechnic colleges and local employers",
+   "value": "Hiring based on proof",
+   "revenue": "Per-student college plan and employer listing fee",
+   "pricing": "[₹__] per student per year",
+   "costs": "App, mentors",
+   "channels": "Placement cells"
+  },
+  "hours": 25,
+  "months": 4,
+  "scores": {
+   "need": 21,
+   "revenue": 16,
+   "seed": 15,
+   "entre": 13,
+   "impact": 14
+  },
+  "checks": {
+   "demand": "Employability gaps are widest for ITI and polytechnic streams.",
+   "today": "CV with marks only.",
+   "who": "Final-year diploma students in small towns.",
+   "wedge": "Portfolio pages for one college batch.",
+   "seen": "Ask five placement officers what proof employers want.",
+   "future": "Skills-based hiring keeps growing."
+  },
+  "evidence": [
+   {
+    "title": "India Skills Report 2026 (Careers360)",
+    "url": "https://news.careers360.com/india-skills-report-2026-cs-computer-science-it-engineer-top-jobs-mba-employment-decline-ai-ml-bfsi-fmcg-pharma-women-hiring/amp",
+    "source": "research"
+   },
+   {
+    "title": "Employability skills and the India job crisis (National Skills Network)",
+    "url": "https://nationalskillsnetwork.in/employability-skills-india-job-crisis/",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Indoor air checks and fixes for homes and schools",
+  "sector": "Clean air",
+  "product": "mix",
+  "budget": "mid",
+  "setting": "city",
+  "problem": "Indoor air in Indian homes can be two to five times more polluted than outdoor air, yet people only watch outdoor AQI.",
+  "solution": "Low-cost indoor monitor plus a simple report that suggests cheap fixes like ventilation and cooking changes.",
+  "roles": {
+   "elec": "Sensor module and calibration",
+   "cs": "App and report",
+   "mech": "Low-cost filter and vent design",
+   "civil": "Ventilation advice for buildings",
+   "biz": "School and society sales"
+  },
+  "model": {
+   "customer": "Schools and families in polluted cities",
+   "value": "Know and fix indoor air",
+   "revenue": "Device sale plus yearly report",
+   "pricing": "[₹__] per device",
+   "costs": "Sensors, support",
+   "channels": "Schools, resident groups"
+  },
+  "hours": 35,
+  "months": 5,
+  "scores": {
+   "need": 20,
+   "revenue": 16,
+   "seed": 14,
+   "entre": 12,
+   "impact": 15
+  },
+  "checks": {
+   "demand": "People already buy purifiers without knowing their indoor air.",
+   "today": "Check outdoor AQI apps or buy a purifier blindly.",
+   "who": "Parents of children and elderly residents.",
+   "wedge": "Rent a monitor for a week to ten homes.",
+   "seen": "Measure the air in ten homes and share results.",
+   "future": "Pollution seasons are getting longer."
+  },
+  "evidence": [
+   {
+    "title": "Jan 29, 2026: air quality is 'very poor' even in south Delhi homes (Newslaundry)",
+    "url": "https://www.newslaundry.com/2026/01/29/jan-29-2026-the-air-quality-is-very-poor-even-in-south-delhi-homes",
+    "source": "research"
+   },
+   {
+    "title": "Why indoor air pollution must be on India's health agenda (Ahmedabad University)",
+    "url": "https://ahduni.edu.in/news/why-indoor-air-pollution-must-be-on-indias-health-agenda/",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Solar sizing and payback helper for small factories",
+  "sector": "Energy",
+  "product": "app",
+  "budget": "low",
+  "setting": "town",
+  "problem": "Small high-power businesses worry about solar performance and know little about it, so many keep paying high power bills.",
+  "solution": "Tool that reads a bill, sizes a rooftop system, compares installers and shows real payback.",
+  "roles": {
+   "cs": "Bill reader and payback calculator",
+   "elec": "System sizing rules",
+   "civil": "Roof checks",
+   "biz": "Installer partners and lead fees"
+  },
+  "model": {
+   "customer": "Small factories and workshops",
+   "value": "Clear savings before buying",
+   "revenue": "Lead fee from installers",
+   "pricing": "[₹__] per qualified lead",
+   "costs": "Tool upkeep, outreach",
+   "channels": "Industry associations"
+  },
+  "hours": 25,
+  "months": 4,
+  "scores": {
+   "need": 21,
+   "revenue": 17,
+   "seed": 15,
+   "entre": 13,
+   "impact": 13
+  },
+  "checks": {
+   "demand": "Surveys show low awareness and perceived risk among small firms.",
+   "today": "Rely on one installer's pitch.",
+   "who": "Workshop owners with large power bills.",
+   "wedge": "A bill-to-payback report for 30 workshops.",
+   "seen": "Ask ten owners why they have not installed solar.",
+   "future": "Rooftop capacity is growing quickly."
+  },
+  "evidence": [
+   {
+    "title": "Solar mission faces challenge from high-power small businesses (India Environment Portal)",
+    "url": "https://indiaenvironmentportal.org.in/news-clippings/modis-solar-mission-faces-challenge-from-high-power-consuming-small-businesses-survey-explains-how",
+    "source": "research"
+   },
+   {
+    "title": "Reasons preventing faster rooftop solar adoption in India (SolarSquare)",
+    "url": "https://www.solarsquare.in/blog/reasons-preventing-faster-rooftop-solar-adoption-in-india/",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Cool rest and water points for delivery riders",
+  "sector": "Gig work",
+  "product": "mix",
+  "budget": "mid",
+  "setting": "city",
+  "problem": "Delivery workers ride through afternoon heat with no shade, water or toilets, and cannot stop without losing pay.",
+  "solution": "Shaded rest points with chilled water and charging near busy pickup spots, paid for by platforms and shops.",
+  "roles": {
+   "civil": "Shade and shelter design",
+   "mech": "Water cooler and fans",
+   "elec": "Solar and phone charging",
+   "cs": "Rest-point map and usage count",
+   "biz": "Sponsor deals with shops and platforms"
+  },
+  "model": {
+   "customer": "Delivery platforms and malls",
+   "value": "Safer riders, fewer drop-offs",
+   "revenue": "Sponsorship and per-point fee",
+   "pricing": "[₹__] per point per month",
+   "costs": "Structure, solar, upkeep",
+   "channels": "Platforms, shop owners"
+  },
+  "hours": 40,
+  "months": 5,
+  "scores": {
+   "need": 21,
+   "revenue": 14,
+   "seed": 14,
+   "entre": 11,
+   "impact": 15
+  },
+  "checks": {
+   "demand": "Heat stress is now routine among delivery workers.",
+   "today": "Rest on pavements and buy water from shops.",
+   "who": "Riders in big-city hotspots.",
+   "wedge": "One rest point near a busy food street.",
+   "seen": "Spend an afternoon with ten riders.",
+   "future": "Heatwaves are expected to increase."
+  },
+  "evidence": [
+   {
+    "title": "Piping hot: India's delivery economy runs on worker heat stress (Newslaundry)",
+    "url": "https://www.newslaundry.com/2026/05/04/piping-hot-indias-delivery-economy-runs-on-worker-heat-stress",
+    "source": "research"
+   },
+   {
+    "title": "Heatwave warnings but no relief: gig workers push for protections (The South First)",
+    "url": "https://thesouthfirst.com/karnataka/heatwave-warnings-but-no-relief-gig-workers-push-for-protections-as-temperatures-soar/",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Daily check-in and helper network for seniors living alone",
+  "sector": "Elder care",
+  "product": "app",
+  "budget": "low",
+  "setting": "city",
+  "problem": "About half of India's seniors report loneliness, and many live far from children who have migrated for work.",
+  "solution": "Daily check-in calls, local helper visits for small tasks, and alerts to family if there is no response.",
+  "roles": {
+   "cs": "Check-in app and family alerts",
+   "biz": "Helper network, pricing, partnerships",
+   "elec": "Simple wearable or panic button",
+   "mech": "Device casing for easy use"
+  },
+  "model": {
+   "customer": "Families with parents living alone",
+   "value": "Peace of mind, small help",
+   "revenue": "Monthly family subscription",
+   "pricing": "[₹__] per month",
+   "costs": "Helper pay, app, calls",
+   "channels": "Resident welfare groups, hospitals"
+  },
+  "hours": 25,
+  "months": 4,
+  "scores": {
+   "need": 22,
+   "revenue": 17,
+   "seed": 15,
+   "entre": 12,
+   "impact": 15
+  },
+  "checks": {
+   "demand": "The senior population is growing fast and care services are thin.",
+   "today": "Phone calls when family remembers.",
+   "who": "Adult children in other cities.",
+   "wedge": "Daily call and two helper visits a month for 20 families.",
+   "seen": "Interview 15 families about how they check on parents.",
+   "future": "The senior population keeps growing."
+  },
+  "evidence": [
+   {
+    "title": "India is facing a silent elderly care crisis (NCAER)",
+    "url": "https://ncaer.org/?p=30189",
+    "source": "research"
+   },
+   {
+    "title": "Empty courtyards, fading voices: elderly isolation amid migration (Exchange4media)",
+    "url": "https://www.exchange4media.com/industry-briefing-news/empty-courtyards-fading-voices-elderly-isolation-amid-migration-exposed-in-report-148310.html",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Construction waste blocks and tiles for low-cost homes",
+  "sector": "Housing",
+  "product": "device",
+  "budget": "mid",
+  "setting": "city",
+  "problem": "Building costs rose about 40% in five years, while construction waste is dumped in huge volumes, leaving affordable homes out of reach.",
+  "solution": "Small machines that turn site waste into bricks and paver blocks sold back to builders and masons.",
+  "roles": {
+   "mech": "Crusher and block press",
+   "civil": "Strength tests and mix design",
+   "elec": "Motor and safety controls",
+   "biz": "Contractor sales and pricing",
+   "cs": "Pickup and stock tracker"
+  },
+  "model": {
+   "customer": "Small builders and municipalities",
+   "value": "Cheaper materials, less dumping",
+   "revenue": "Block sales plus waste pickup fee",
+   "pricing": "[₹__] per block",
+   "costs": "Machine, power, transport",
+   "channels": "Contractors, housing projects"
+  },
+  "hours": 45,
+  "months": 6,
+  "scores": {
+   "need": 21,
+   "revenue": 17,
+   "seed": 15,
+   "entre": 11,
+   "impact": 15
+  },
+  "checks": {
+   "demand": "Cement, steel and labour costs keep climbing.",
+   "today": "Buy new material and pay to dump waste.",
+   "who": "Small contractors on repair and low-rise jobs.",
+   "wedge": "Paver blocks from waste of one nearby site.",
+   "seen": "Ask ten contractors what they pay to dump waste.",
+   "future": "Waste and costs both keep rising."
+  },
+  "evidence": [
+   {
+    "title": "Construction costs in India surge 40% in five years (NBM&CW)",
+    "url": "https://www.nbmcw.com/news/construction-costs-in-india-surge-40-in-5-years-fueling-real-estate-price-hike.html",
+    "source": "research"
+   },
+   {
+    "title": "Re-Build India: converting construction waste into affordable shelter (SJP journal)",
+    "url": "https://journals.sjp.ac.lk/index.php/SLJRE/article/view/9100",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Scam check helper for seniors and first-time UPI users",
+  "sector": "Finance",
+  "product": "app",
+  "budget": "low",
+  "setting": "any",
+  "problem": "Cyber fraud complaints crossed 12.7 lakh in the first half of 2026, and seniors are often the targets of UPI and phone scams.",
+  "solution": "Simple app and WhatsApp bot where users paste a message or number and get a plain-language risk check.",
+  "roles": {
+   "cs": "Scam checker and language support",
+   "biz": "Bank, society and senior group tie-ups"
+  },
+  "model": {
+   "customer": "Seniors and families",
+   "value": "Avoid losing savings",
+   "revenue": "Family plan and partner fees",
+   "pricing": "[₹__] per month",
+   "costs": "App, content, support",
+   "channels": "Banks, senior groups, families"
+  },
+  "hours": 20,
+  "months": 3,
+  "scores": {
+   "need": 22,
+   "revenue": 15,
+   "seed": 14,
+   "entre": 14,
+   "impact": 14
+  },
+  "checks": {
+   "demand": "Losses from cyber fraud run to thousands of crores.",
+   "today": "Ask a relative or ignore calls.",
+   "who": "Seniors and first-time digital users.",
+   "wedge": "A WhatsApp checker for the top ten scam types.",
+   "seen": "Collect 50 real scam messages from relatives.",
+   "future": "Digital payments keep growing."
+  },
+  "evidence": [
+   {
+    "title": "WEF calls cyber fraud 'pervasive' as India faces rising scam losses (The Quint)",
+    "url": "https://www.thequint.com/amp/story/news/webqoof/wef-cybersecurity-report-flags-cyber-fraud-as-pervasive-threat",
+    "source": "research"
+   },
+   {
+    "title": "India reports ₹805 crore UPI fraud till Nov FY26 (Free Press Journal)",
+    "url": "https://www.freepressjournal.in/amp/tech/india-reports-805-crore-upi-fraud-till-nov-fy26-amid-rising-digital-payments",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Credit book and restocking tool for kirana stores",
+  "sector": "Retail",
+  "product": "app",
+  "budget": "low",
+  "setting": "town",
+  "problem": "Neighbourhood grocery stores track customer credit on paper and get little supplier credit, which strains cash and stock.",
+  "solution": "Phone app for customer credit, reminders and restock suggestions, with supplier offers.",
+  "roles": {
+   "cs": "Credit book and restock tool",
+   "biz": "Shop sign-ups and supplier deals"
+  },
+  "model": {
+   "customer": "Kirana shop owners",
+   "value": "Better cash and less lost credit",
+   "revenue": "Small monthly plan plus supplier fees",
+   "pricing": "[₹__] per month",
+   "costs": "App, field sales",
+   "channels": "Distributors, shop groups"
+  },
+  "hours": 20,
+  "months": 3,
+  "scores": {
+   "need": 21,
+   "revenue": 17,
+   "seed": 14,
+   "entre": 14,
+   "impact": 11
+  },
+  "checks": {
+   "demand": "Around 90% of grocery trade runs through small stores.",
+   "today": "Notebook of credit and phone calls to suppliers.",
+   "who": "Shops with 50+ regular credit customers.",
+   "wedge": "Credit book and reminders for 30 shops.",
+   "seen": "Sit in five shops for a day and watch.",
+   "future": "Retail keeps digitising."
+  },
+  "evidence": [
+   {
+    "title": "Digitising Indian retail: challenges and growth models (ORF)",
+    "url": "https://www.orfonline.org/research/digitising-indian-retail-analysing-challenges-and-exploring-growth-models",
+    "source": "research"
+   },
+   {
+    "title": "How kirana stores can reduce payment failures (Innoviti)",
+    "url": "https://innoviti.com/blogs/how-kirana-and-convenience-stores-can-reduce-payment-failures-and-revenue-leakage/",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Drip kits and soil-moisture alerts for depleted-borewell farms",
+  "sector": "Water",
+  "product": "mix",
+  "budget": "mid",
+  "setting": "rural",
+  "problem": "Groundwater supplies 62% of irrigation, and deeper wells in depleted areas often give brackish or unreliable water.",
+  "solution": "Low-cost drip kit with a soil-moisture sensor that texts the farmer when watering is actually needed.",
+  "roles": {
+   "mech": "Drip layout and valves",
+   "elec": "Moisture sensor and solar pump timer",
+   "cs": "SMS alerts",
+   "civil": "Small farm pond and channels",
+   "biz": "Farmer groups, financing"
+  },
+  "model": {
+   "customer": "Small farmers in water-stressed areas",
+   "value": "Less water, steady yield",
+   "revenue": "Kit sale plus yearly alert plan",
+   "pricing": "[₹__] per acre",
+   "costs": "Kits, sensors, service",
+   "channels": "Farmer groups, input shops"
+  },
+  "hours": 40,
+  "months": 6,
+  "scores": {
+   "need": 22,
+   "revenue": 16,
+   "seed": 15,
+   "entre": 11,
+   "impact": 15
+  },
+  "checks": {
+   "demand": "Water tables keep falling in many states.",
+   "today": "Run the pump on a fixed schedule.",
+   "who": "Farmers growing vegetables and horticulture.",
+   "wedge": "Sensors and alerts for ten plots.",
+   "seen": "Join farmers for a watering round.",
+   "future": "Groundwater loss is projected to speed up."
+  },
+  "evidence": [
+   {
+    "title": "When wells fail: farmers' response to groundwater depletion in India (IFPRI)",
+    "url": "https://www.ifpri.org/blog/when-wells-fail-farmers-response-groundwater-depletion-india/",
+    "source": "research"
+   },
+   {
+    "title": "India will be losing groundwater three times faster in 2041-2080 (Down To Earth)",
+    "url": "https://www.downtoearth.org.in/water/india-will-be-losing-groundwater-three-times-faster-in-2041-2080-finds-study-91503",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Peer support and career guidance for exam students",
+  "sector": "Education",
+  "product": "app",
+  "budget": "low",
+  "setting": "any",
+  "problem": "Many students do not know where to get mental-health help in school, and nearly half have never had structured career counselling.",
+  "solution": "App with trained peer mentors, anonymous check-ins, and a path to Tele-MANAS and local counsellors.",
+  "roles": {
+   "cs": "Anonymous chat and check-ins",
+   "biz": "School and hostel partnerships",
+   "other": "Counsellor and mentor training"
+  },
+  "model": {
+   "customer": "Schools, hostels and coaching centres",
+   "value": "Early help and clear next steps",
+   "revenue": "School plan per student",
+   "pricing": "[₹__] per student per year",
+   "costs": "Mentor pay, app",
+   "channels": "Schools, hostels"
+  },
+  "hours": 25,
+  "months": 4,
+  "scores": {
+   "need": 23,
+   "revenue": 13,
+   "seed": 13,
+   "entre": 12,
+   "impact": 16
+  },
+  "checks": {
+   "demand": "Surveys report many students rarely feel calm or motivated.",
+   "today": "Cope alone or tell a friend.",
+   "who": "Class 10–12 and exam-preparation students.",
+   "wedge": "Anonymous check-ins and referrals for one hostel.",
+   "seen": "Ask 20 students where they would go for help.",
+   "future": "Exam competition is growing."
+  },
+  "evidence": [
+   {
+    "title": "Rising student deaths by suicide: what the 2024 NCRB report shows (The Wire)",
+    "url": "https://thewire.in/education/rising-student-deaths-by-suicide-what-the-2024-ncrb-report-shows",
+    "source": "research"
+   },
+   {
+    "title": "One in five students rarely feels calm: IC3 report (Free Press Journal)",
+    "url": "https://www.freepressjournal.in/amp/education/study-abroad/one-in-five-students-rarely-feels-calm-ic3-report-exposes-alarming-scale-of-student-mental-health-crisis-in-india",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Source segregation tracker for housing societies",
+  "sector": "Waste",
+  "product": "app",
+  "budget": "low",
+  "setting": "city",
+  "problem": "Only 30–35% of municipal waste is segregated, and even Bengaluru's source segregation has stalled near 54%.",
+  "solution": "Society app that tracks bin-level segregation, gives feedback to flats and reports for the new waste rules.",
+  "roles": {
+   "cs": "Tracking app and reports",
+   "biz": "Society sales and recycler deals",
+   "civil": "Bin area design",
+   "mech": "Colour-coded bin set-up"
+  },
+  "model": {
+   "customer": "Housing societies and RWAs",
+   "value": "Compliance and lower waste costs",
+   "revenue": "Monthly society plan",
+   "pricing": "[₹__] per month",
+   "costs": "App, bins, audits",
+   "channels": "RWAs, ward offices"
+  },
+  "hours": 25,
+  "months": 4,
+  "scores": {
+   "need": 21,
+   "revenue": 16,
+   "seed": 14,
+   "entre": 13,
+   "impact": 14
+  },
+  "checks": {
+   "demand": "New solid waste rules ask for stronger segregation and tracking.",
+   "today": "Reminders on notice boards.",
+   "who": "Societies with 100+ flats.",
+   "wedge": "Photo checks and a weekly score for one society.",
+   "seen": "Join a pickup round in one society.",
+   "future": "Rules and fees keep getting stricter."
+  },
+  "evidence": [
+   {
+    "title": "Once pioneer in garbage segregation, Bengaluru struggles to regain momentum (Deccan Herald)",
+    "url": "https://www.deccanherald.com/india/karnataka/bengaluru/once-pioneer-in-garbage-segregation-bengaluru-struggles-to-regain-momentum-4088423",
+    "source": "research"
+   },
+   {
+    "title": "Solid Waste Management Rules, 2026: implementation readiness (IMPRI)",
+    "url": "https://www.impriindia.com/insights/policy-update/solid-waste-management-rules-2026-examining-indias-implementation-readiness/",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Affordable helmet rental and safety kit for bike taxi and delivery riders",
+  "sector": "Mobility",
+  "product": "mix",
+  "budget": "mid",
+  "setting": "city",
+  "problem": "About 73% of two-wheeler riders who died in 2023 were not wearing a helmet, and two-wheelers account for 45% of road deaths.",
+  "solution": "Quality helmets with a lockable carrier on rent or low monthly instalments for working riders.",
+  "roles": {
+   "mech": "Helmet design and testing",
+   "elec": "Locker and tracking tag",
+   "cs": "Rental and instalment app",
+   "biz": "Rider and fleet partnerships"
+  },
+  "model": {
+   "customer": "Fleet owners and working riders",
+   "value": "Safer rides at low upfront cost",
+   "revenue": "Rental and instalment margin",
+   "pricing": "[₹__] per month",
+   "costs": "Helmets, lockers, losses",
+   "channels": "Fleets, tea stalls, platforms"
+  },
+  "hours": 35,
+  "months": 5,
+  "scores": {
+   "need": 22,
+   "revenue": 15,
+   "seed": 14,
+   "entre": 11,
+   "impact": 16
+  },
+  "checks": {
+   "demand": "Most deaths among riders involve no helmet.",
+   "today": "Skip it or buy a cheap one.",
+   "who": "Delivery and bike-taxi riders.",
+   "wedge": "One rental stand with 30 helmets near a hub.",
+   "seen": "Count helmet use at one junction for a day.",
+   "future": "Two-wheeler use keeps growing."
+  },
+  "evidence": [
+   {
+    "title": "More two-wheelers, gig workers under pressure: 9 bike riders die every hour (Newslaundry)",
+    "url": "https://www.newslaundry.com/amp/story/2025%2F11%2F10%2Fmore-two-wheelers-gig-workers-under-pressure-in-india-9-bike-riders-die-every-hour",
+    "source": "research"
+   },
+   {
+    "title": "Indian roads are deadliest for pedestrians, two-wheeler riders (Scroll)",
+    "url": "https://scroll.in/article/1088373/indian-roads-are-deadliest-for-pedestrians-two-wheeler-riders",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Direct online store and design help for weavers",
+  "sector": "Handloom and craft",
+  "product": "app",
+  "budget": "low",
+  "setting": "any",
+  "problem": "Nearly two-thirds of handloom weavers earn under ₹5,000 a month and depend on middlemen, with almost no e-commerce use.",
+  "solution": "Marketplace that photographs, lists and ships weaver products with fair price splits and design guidance.",
+  "roles": {
+   "cs": "Store, listings and orders",
+   "biz": "Weaver groups, pricing and brand",
+   "mech": "Loom tool improvements",
+   "civil": "Workshop layout and light"
+  },
+  "model": {
+   "customer": "Weaver groups and urban buyers",
+   "value": "Higher earnings, direct buyers",
+   "revenue": "Commission per sale",
+   "pricing": "[₹__] per order",
+   "costs": "Photography, shipping, support",
+   "channels": "Weaver cooperatives, social media"
+  },
+  "hours": 25,
+  "months": 4,
+  "scores": {
+   "need": 22,
+   "revenue": 15,
+   "seed": 14,
+   "entre": 12,
+   "impact": 15
+  },
+  "checks": {
+   "demand": "Artisans have little control over pricing or direct sales.",
+   "today": "Sell to a master weaver or at a fair stall.",
+   "who": "Weaver clusters near big cities.",
+   "wedge": "Ten weavers' products listed in one store.",
+   "seen": "Visit one cluster and learn how orders flow.",
+   "future": "Demand for handmade goods keeps growing."
+  },
+  "evidence": [
+   {
+    "title": "Bandhej, Ikkat and Zari are everywhere, but India's artisans are struggling (The Week)",
+    "url": "https://www.theweek.in/leisure/lifestyle/2026/05/26/traditional-saree-artisans-struggle.html",
+    "source": "research"
+   },
+   {
+    "title": "India saved handloom. Now it must save weaving as a livelihood (YourStory)",
+    "url": "https://yourstory.com/2026/08/india-save-weaving-livelihood",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Milk quality test and health alert for small dairy farmers",
+  "sector": "Dairy",
+  "product": "device",
+  "budget": "mid",
+  "setting": "rural",
+  "problem": "Small dairy farmers with one or two animals face cattle disease, poor feed and unsafe raw milk, and only about 20% of milk reaches organised markets.",
+  "solution": "Handheld milk tester at collection points with a phone log that flags quality and sick-animal patterns.",
+  "roles": {
+   "elec": "Sensor and test device",
+   "cs": "Logging app and alerts",
+   "mech": "Sample cup and casing",
+   "biz": "Dairy society deals, pricing"
+  },
+  "model": {
+   "customer": "Village dairy societies",
+   "value": "Fair pay for quality, early disease alerts",
+   "revenue": "Device lease plus data plan",
+   "pricing": "[₹__] per month",
+   "costs": "Devices, support",
+   "channels": "Dairy societies, vets"
+  },
+  "hours": 35,
+  "months": 5,
+  "scores": {
+   "need": 21,
+   "revenue": 15,
+   "seed": 14,
+   "entre": 11,
+   "impact": 14
+  },
+  "checks": {
+   "demand": "Diseases like lumpy skin disease cut milk output by 20 to 50%.",
+   "today": "Judge quality by eye and smell.",
+   "who": "Dairy societies collecting from small herds.",
+   "wedge": "One tester at one collection point for a month.",
+   "seen": "Visit a collection centre and watch the morning rush.",
+   "future": "Disease and feed pressure keep growing."
+  },
+  "evidence": [
+   {
+    "title": "Challenges in intensifying India smallholder dairy production (ILRI)",
+    "url": "https://www.ilri.org/knowledge/publications/challenges-intensifying-india-smallholder-dairy-production-health-risks-and",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Battery health check and second-life packs for e-rickshaw owners",
+  "sector": "Mobility",
+  "product": "mix",
+  "budget": "mid",
+  "setting": "city",
+  "problem": "EV battery waste is growing, and much of it ends up in informal recycling or is exported as black mass, losing valuable materials.",
+  "solution": "Test used batteries, resell good ones for solar backup and send the rest to authorised recyclers.",
+  "roles": {
+   "elec": "Battery testing and pack building",
+   "mech": "Casing and cooling",
+   "cs": "Battery history and booking",
+   "biz": "Buyer and recycler contracts",
+   "civil": "Safe storage area"
+  },
+  "model": {
+   "customer": "E-rickshaw owners and shops needing backup",
+   "value": "Fair buy-back, cheap backup power",
+   "revenue": "Resale margin and test fee",
+   "pricing": "[₹__] per test",
+   "costs": "Test rig, storage, safety",
+   "channels": "Rickshaw stands, repair shops"
+  },
+  "hours": 40,
+  "months": 6,
+  "scores": {
+   "need": 20,
+   "revenue": 17,
+   "seed": 16,
+   "entre": 10,
+   "impact": 14
+  },
+  "checks": {
+   "demand": "EV numbers rose forty-fold since 2016.",
+   "today": "Sell to scrap dealers.",
+   "who": "E-rickshaw and scooter owners.",
+   "wedge": "Test and buy back batteries from one stand.",
+   "seen": "Ask 15 owners how they dispose of weak batteries.",
+   "future": "More EVs mean more used batteries each year."
+  },
+  "evidence": [
+   {
+    "title": "Is there a future for re-using EV batteries in India (Oxford Smith School)",
+    "url": "https://www.smithschool.ox.ac.uk/sites/default/files/2026-06/Is-there-a%20future-for-re-using-Electric-Vehicle-batteries-in-India.pdf",
+    "source": "research"
+   },
+   {
+    "title": "Can India's battery recycling ecosystem keep pace with EV growth (Autocar Pro)",
+    "url": "https://www.autocarpro.in/opinion-blogs/can-indias-battery-recycling-ecosystem-keep-pace-with-its-ev-growth-134676?amp=1",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Ice and cold box service for small fishers",
+  "sector": "Fisheries",
+  "product": "device",
+  "budget": "mid",
+  "setting": "rural",
+  "problem": "Post-harvest fish losses are estimated at 15–30% because small fishers lack ice, storage and cold transport.",
+  "solution": "Insulated boxes and small ice supply at landing sites, rented per trip with a simple order app.",
+  "roles": {
+   "mech": "Insulated box design",
+   "elec": "Solar ice maker and temperature logger",
+   "cs": "Order and trip log",
+   "civil": "Landing-site stand",
+   "biz": "Fisher group deals, pricing"
+  },
+  "model": {
+   "customer": "Small fishers and buyers",
+   "value": "Fresher catch, better price",
+   "revenue": "Box rent plus ice sales",
+   "pricing": "[₹__] per trip",
+   "costs": "Boxes, ice plant, upkeep",
+   "channels": "Fisher cooperatives, landing sites"
+  },
+  "hours": 40,
+  "months": 6,
+  "scores": {
+   "need": 21,
+   "revenue": 16,
+   "seed": 15,
+   "entre": 11,
+   "impact": 14
+  },
+  "checks": {
+   "demand": "Poor cold chains reduce fisher income.",
+   "today": "Sell immediately at any price.",
+   "who": "Small-boat fishers.",
+   "wedge": "Rent ten boxes at one landing site.",
+   "seen": "Stand at a landing site for two mornings.",
+   "future": "Cold chains will matter more as catches vary."
+  },
+  "evidence": [
+   {
+    "title": "Post-harvest losses in fisheries: a barrier to export growth (IMPRI)",
+    "url": "https://iprr.impriindia.com/wp-content/uploads/2026/06/Young-Voices-Post-Harvest-Losses-In-Fisheries_-A-Barrier-To-Marine-Export-Growth-In-India.pdf",
+    "source": "research"
+   },
+   {
+    "title": "Blue revolution and small-scale fishers (The Wire)",
+    "url": "https://thewire.in/environment/blue-revolution-small-scale-fishers-rights-deaths-compensation-insurance-bureacracy-uncertainty",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "EMI and repair service for assistive devices",
+  "sector": "Health",
+  "product": "service",
+  "budget": "mid",
+  "setting": "city",
+  "problem": "Only 29% of people with disabilities own assistive devices, and 43.5% say cost is the biggest barrier.",
+  "solution": "Instalment plans, refurbished devices and local repair for wheelchairs, hearing aids and prosthetics.",
+  "roles": {
+   "biz": "Financing and partnerships",
+   "mech": "Refurbishing and repair",
+   "cs": "Booking and device records",
+   "elec": "Hearing and battery repair",
+   "civil": "Home accessibility checks"
+  },
+  "model": {
+   "customer": "People with disabilities and families",
+   "value": "Affordable devices and support",
+   "revenue": "Service fee and instalment margin",
+   "pricing": "[₹__] per month",
+   "costs": "Parts, repair staff",
+   "channels": "Hospitals, NGOs"
+  },
+  "hours": 35,
+  "months": 5,
+  "scores": {
+   "need": 23,
+   "revenue": 14,
+   "seed": 14,
+   "entre": 10,
+   "impact": 16
+  },
+  "checks": {
+   "demand": "Many pay out of pocket for devices and repair.",
+   "today": "Go without or use a broken device.",
+   "who": "Low-income users of mobility or hearing devices.",
+   "wedge": "Refurbish and finance wheelchairs for one city.",
+   "seen": "Ask 15 users how they paid for their device.",
+   "future": "Ageing adds demand for assistive products."
+  },
+  "evidence": [
+   {
+    "title": "Can you buy a prosthetic on EMI? Critical gaps in assistive technology access (The Week)",
+    "url": "https://www.theweek.in/news/health/2026/09/14/can-you-buy-a-prosthetic-on-emi-the-critical-gaps-in-assistive-technology-access-for-indias-disabled.amp.html",
+    "source": "research"
+   }
+  ]
+ },
+ {
+  "title": "Rental agreement and deposit tracker for tenants",
+  "sector": "Housing",
+  "product": "app",
+  "budget": "low",
+  "setting": "city",
+  "problem": "Tenants lose deposits and homes in broker or owner disputes, and many rentals still run on oral or unregistered agreements.",
+  "solution": "App that creates a clear agreement, records deposit and move-in photos, and explains the rules of each state.",
+  "roles": {
+   "cs": "Agreement, records and reminders",
+   "biz": "Broker and owner partnerships",
+   "civil": "Move-in condition checklist"
+  },
+  "model": {
+   "customer": "Young tenants in big cities",
+   "value": "Fewer disputes, safer deposits",
+   "revenue": "Fee per agreement",
+   "pricing": "[₹__] per agreement",
+   "costs": "App, legal review",
+   "channels": "Colleges, PG owners"
+  },
+  "hours": 20,
+  "months": 3,
+  "scores": {
+   "need": 21,
+   "revenue": 16,
+   "seed": 13,
+   "entre": 14,
+   "impact": 11
+  },
+  "checks": {
+   "demand": "Tenants report sudden eviction and lost deposits.",
+   "today": "Rely on a broker and a stamp paper.",
+   "who": "Students and young workers.",
+   "wedge": "Agreement plus photo record for 100 tenants.",
+   "seen": "Ask 20 tenants about their last deposit.",
+   "future": "More states are adopting the Model Tenancy Act."
+  },
+  "evidence": [
+   {
+    "title": "We lost ₹70,000 overnight: Gurgaon tenants allege eviction (Business Today)",
+    "url": "https://www.businesstoday.in/amp/latest/trends/story/we-lost-rs70000-overnight-gurgaon-tenants-allege-eviction-after-owner-broker-dispute-535034-2026-06-06",
+    "source": "research"
+   },
+   {
+    "title": "Model Tenancy Act: what tenants and landlords must know in 2026 (Housiey)",
+    "url": "https://housiey.com/blogs/model-tenancy-act-what-tenants-and-landlords-must-know-in-2025",
+    "source": "research"
+   }
+  ]
+ }
+]

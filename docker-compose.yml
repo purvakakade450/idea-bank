@@ -1,0 +1,20 @@
+services:
+  web:
+    build: .
+    env_file: .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ideabank-data:/app/data
+    restart: unless-stopped
+
+  worker:
+    build: .
+    env_file: .env
+    command: ["python", "-m", "app.worker"]
+    volumes:
+      - ideabank-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  ideabank-data:

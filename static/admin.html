@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Idea Bank admin</title>
+<style>
+:root{--bg:#F5F8F6;--surface:#fff;--ink:#18231F;--muted:#56635E;--line:#DCE4E0;--teal:#17705A;--soft:#E3F3EC;--warn:#FCF2E1;--warn-ink:#69400A;--bad:#FBEEF2;--bad-ink:#70243D}
+@media (prefers-color-scheme:dark){:root{--bg:#0F1513;--surface:#161E1B;--ink:#E5EDE9;--muted:#9DAAA5;--line:#26312D;--teal:#5CC7A2;--soft:#14302A;--warn:#2E230F;--warn-ink:#F4D49B;--bad:#331B24;--bad-ink:#F4C2D2}}
+*{box-sizing:border-box} [hidden]{display:none!important} body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.5}
+.wrap{max-width:1100px;margin:0 auto;padding:28px 20px} h1{font-size:26px;margin:0 0 4px} h2{font-size:19px;margin:28px 0 12px}
+.muted{color:var(--muted)} .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+input{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:9px 12px;min-width:280px}
+button{font:inherit;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:8px 14px;font-weight:600;cursor:pointer}
+button.primary{background:var(--teal);border-color:var(--teal);color:#fff} button:disabled{opacity:.5}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px}
+.ok{color:var(--teal);font-weight:700} .err{color:var(--bad-ink);font-weight:700}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);font-size:14px;vertical-align:top}
+.scroll{overflow-x:auto} .idea{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px}
+.idea h3{margin:0 0 6px;font-size:17px} .pill{display:inline-block;font-size:12px;font-weight:700;padding:2px 9px;border-radius:99px;background:var(--soft)}
+.fail{background:var(--bad);color:var(--bad-ink)} .msg{padding:10px 12px;border-radius:10px;background:var(--warn);color:var(--warn-ink);margin:10px 0}
+a{color:var(--teal)}
+.box b{overflow-wrap:anywhere}
+.errtxt{display:inline-block;max-width:560px;overflow-wrap:anywhere}
+input,select{max-width:100%}
+nav.top{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.btnlink{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;font-weight:600;border-radius:10px;padding:8px 14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="top" aria-label="Site"><a href="/">Home</a><a href="/ideas">Ideas</a></nav>
+  <h1>Idea Bank admin</h1>
+  <p class="muted">Add reviewers who approve ideas before they appear on the website. <a href="/">Back to the site</a></p>
+  <form id="login" class="row" autocomplete="on"><label for="usr" class="muted">Username</label><input id="usr" autocomplete="username" style="min-width:160px" required><label for="pwd" class="muted">Password</label><input id="pwd" type="password" autocomplete="current-password" style="min-width:200px" required><button class="primary" id="go" type="submit">Sign in</button></form>
+  <div class="row" id="bar" hidden style="margin-top:6px"><span class="muted">Signed in as admin.</span><button id="out" type="button">Sign out</button></div>
+  <div id="msg"></div>
+  <div id="main" hidden>
+    <p id="summary" class="muted"></p>
+    <h2>Reviewers</h2>
+    <p class="muted">Reviewers decide which ideas go on the website. Add a name and email: they get a sign-in link and code by email.</p>
+    <div class="row"><label for="rname" class="muted">Name</label><input id="rname" maxlength="60" placeholder="Reviewer's name" style="min-width:200px"><label for="remail" class="muted">Email</label><input id="remail" type="email" maxlength="120" placeholder="name@example.com" style="min-width:240px"><button class="primary" id="addRev">Add reviewer</button></div>
+    <div id="newcode"></div>
+    <div class="scroll" style="margin-top:12px"><table><thead><tr><th>Name</th><th>Email</th><th>Approved</th><th>Rejected</th><th>Access</th></tr></thead><tbody id="revs"></tbody></table></div>
+    <h2>Ideas waiting for a decision</h2><div id="queue"></div>
+    <h2>Email</h2>
+    <p class="muted" id="emailState"></p>
+    <details id="emailBox"><summary style="cursor:pointer;font-weight:600">Set up or change email sending</summary>
+      <p class="muted">Gmail: server <b>smtp.gmail.com</b>, port <b>587</b>, your Gmail address as username, and a 16-letter
+      <a href="https://myaccount.google.com/apppasswords" target="_blank" rel="noopener noreferrer">app password</a> (needs 2-Step Verification on).</p>
+      <div class="row" style="margin-bottom:10px"><label class="muted" for="eProv">Email provider</label>
+        <select id="eProv" style="border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:9px 12px"><option value="gmail">Gmail</option><option value="outlook">Outlook / Hotmail</option><option value="other">Other (type the details)</option></select></div>
+      <form id="emailForm" class="grid" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr));align-items:end">
+        <div><label class="muted" for="eHost">Mail server</label><br><input id="eHost" style="min-width:0;width:100%" placeholder="smtp.gmail.com" required></div>
+        <div><label class="muted" for="ePort">Port</label><br><input id="ePort" style="min-width:0;width:100%" placeholder="587" inputmode="numeric"></div>
+        <div><label class="muted" for="eUser">Username (your email)</label><br><input id="eUser" type="email" style="min-width:0;width:100%" autocomplete="off" required></div>
+        <div><label class="muted" for="ePass">App password</label><br><input id="ePass" type="password" style="min-width:0;width:100%" autocomplete="new-password" placeholder="leave blank to keep the saved one"></div>
+        <div><label class="muted" for="eFrom">Send as</label><br><input id="eFrom" style="min-width:0;width:100%" placeholder="Idea Bank &lt;you@gmail.com&gt;"></div>
+        <div><button class="primary" type="submit">Save email settings</button></div>
+      </form>
+      <div class="row" style="margin-top:12px"><label class="muted" for="eTest">Send a test to</label><input id="eTest" type="email" placeholder="your@email.com" style="min-width:240px"><button type="button" id="eTestGo">Send test email</button></div>
+      <div id="emailMsg"></div>
+    </details>
+    <details id="advBox" style="margin-top:28px"><summary style="cursor:pointer;font-weight:600">Advanced: data collection (usually not needed)</summary>
+      <p class="muted">The site collects news by itself every few hours. Use these only to check sources or collect right now.</p>
+    <div class="grid" id="counts"></div>
+    <h3>Data sources</h3><div class="scroll"><table><thead><tr><th>Source</th><th>Enabled</th><th>Last run</th><th>Result</th></tr></thead><tbody id="srcs"></tbody></table></div>
+    <div class="row" style="margin-top:14px"><button class="primary" id="runAll">Collect data and find ideas now</button><button id="runIngest">Only collect data</button><button id="runEngine">Only run the idea engine</button><span class="muted" id="job"></span></div>
+    </details>
+  </div>
+</div>
+<script>
+(function(){
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let token=""; try{token=sessionStorage.getItem("ib-admin")||"";}catch(e){}
+async function api(p,o){o=o||{}; o.headers={"Content-Type":"application/json","X-Admin-Token":token}; if(o.body) o.body=JSON.stringify(o.body);
+  const r=await fetch(p,o); const d=await r.json().catch(()=>({})); if(!r.ok) throw new Error(d.error||r.status); return d;}
+function shortErr(t){ t=String(t||""); if(/429/.test(t)) return "The source asked us to slow down. It will retry on the next run."; if(/403/.test(t)) return "The source blocked the request (Reddit needs an app login)."; return t.length>140?t.slice(0,140)+"…":t; }
+async function signIn(ev){
+  ev.preventDefault();
+  try{ const d=await fetch("/api/admin/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({username:$("#usr").value,password:$("#pwd").value})});
+    const j=await d.json().catch(()=>({})); if(!d.ok) throw new Error(j.error||"Could not sign in");
+    token=j.token; try{sessionStorage.setItem("ib-admin",token);}catch(e){} $("#pwd").value=""; load(); }
+  catch(e){ $("#msg").innerHTML=`<div class="msg">${esc(e.message)}</div>`; }
+}
+function signOut(){ token=""; try{sessionStorage.removeItem("ib-admin");}catch(e){} $("#main").hidden=true; $("#bar").hidden=true; $("#login").hidden=false; $("#msg").innerHTML=""; }
+async function load(){
+  try{
+    const d=await api("/api/admin/overview"); $("#msg").innerHTML=""; $("#main").hidden=false; $("#login").hidden=true; $("#bar").hidden=false;
+    const c=d.counts; const ideas=c.ideas||{}; $("#summary").innerHTML=`<b>${ideas.approved||0}</b> ideas live on the website · <b>${ideas.pending||0}</b> waiting for a reviewer`;
+    $("#counts").innerHTML=[["AI configured",d.ai?"Yes":"No — set ANTHROPIC_API_KEY"],["Signals collected",c.signals],["Waiting for engine",c.unprocessed],["Problems found",c.problems],["Live ideas",ideas.approved||0],["Waiting for review",ideas.pending||0],["Rejected",ideas.rejected||0],["Teams",c.teams],["Runs every",d.interval_hours+" hours"]]
+      .map(([k,v])=>`<div class="box"><div class="muted" style="font-size:13px">${k}</div><b style="font-size:20px">${esc(v)}</b></div>`).join("");
+    const last={}; (d.last_runs||[]).forEach(r=>last[r.source]=r);
+    $("#srcs").innerHTML=Object.keys(d.sources).map(s=>{const r=last[s];return `<tr><td>${s}</td><td>${d.sources[s]?'<span class="ok">Yes</span>':'<span class="muted">No (off or missing key)</span>'}</td><td>${r?esc(r.started_at):"—"}</td><td>${r?(r.ok?`<span class="ok">OK</span> · ${r.fetched} fetched, ${r.added} new`:`<span class="err">Failed</span> <span class="errtxt" title="${esc(r.error)}">${esc(shortErr(r.error))}</span>`):"—"}</td></tr>`;}).join("");
+    $("#job").textContent=d.job.running?"A run is in progress…":(d.job.last?("Last manual run: "+d.job.last.at):"");
+    loadQueue(); loadRevs(); loadEmail();
+  }catch(e){ $("#main").hidden=true; $("#bar").hidden=true; $("#login").hidden=false; $("#msg").innerHTML=`<div class="msg">${esc(e.message)}</div>`; }
+}
+const PROV={gmail:["smtp.gmail.com",587],outlook:["smtp-mail.outlook.com",587]};
+function pickProv(){ const p=PROV[$("#eProv").value]; if(p){ $("#eHost").value=p[0]; $("#ePort").value=p[1]; $("#eHost").readOnly=$("#ePort").readOnly=true; } else { $("#eHost").readOnly=$("#ePort").readOnly=false; } }
+$("#eProv").addEventListener("change",pickProv);
+$("#eUser").addEventListener("input",()=>{ if(!$("#eFrom").dataset.touched) $("#eFrom").value=$("#eUser").value?("Idea Bank <"+$("#eUser").value+">"):""; });
+$("#eFrom").addEventListener("input",()=>{ $("#eFrom").dataset.touched="1"; });
+async function loadEmail(){
+  const e=await api("/api/admin/email-settings");
+  $("#emailState").innerHTML=e.configured?`<span class="ok">Email is set up</span> (${esc(e.host)}, from ${esc(e.sender)}). Reviewers receive their sign-in code by email.`:`<span class="err">Email is not set up.</span> The site cannot send reviewers their code until you fill this in.`;
+  $("#eHost").value=e.host||""; $("#ePort").value=e.port||587; $("#eUser").value=e.user||""; $("#eFrom").value=e.sender||"";
+  $("#ePass").placeholder=e.has_password?"saved (leave blank to keep it)":"16-letter app password";
+  $("#eProv").value=e.host==="smtp.gmail.com"?"gmail":e.host==="smtp-mail.outlook.com"?"outlook":(e.host?"other":"gmail");
+  if(!e.host) pickProv(); else pickProv();
+  if(!e.configured) $("#emailBox").open=true;
+}
+$("#emailForm").addEventListener("submit",async ev=>{ ev.preventDefault();
+  try{ await api("/api/admin/email-settings",{method:"POST",body:{host:$("#eHost").value,port:$("#ePort").value,user:$("#eUser").value,password:$("#ePass").value,sender:$("#eFrom").value}});
+    $("#ePass").value=""; $("#emailMsg").innerHTML='<div class="msg">Saved. Now send a test email to check it works.</div>'; await loadEmail(); $("#emailBox").open=true; }
+  catch(err){ $("#emailMsg").innerHTML=`<div class="msg">${esc(err.message)}</div>`; } });
+$("#eTestGo").onclick=async()=>{ $("#emailBox").open=true; $("#eTestGo").disabled=true; $("#emailMsg").innerHTML='<div class="msg">Sending… this can take up to 30 seconds.</div>';
+  try{ const d=await api("/api/admin/email-test",{method:"POST",body:{to:$("#eTest").value}});
+    $("#emailMsg").innerHTML=d.ok?`<div class="msg">Test email sent to <b>${esc($("#eTest").value)}</b>. Check the inbox (and spam).</div>`:`<div class="msg"><b>Could not send:</b> ${esc(d.error)}</div>`; }
+  catch(err){ $("#emailMsg").innerHTML=`<div class="msg">${esc(err.message)}</div>`; }
+  $("#eTestGo").disabled=false; };
+async function loadRevs(){
+  const d=await api("/api/admin/reviewers");
+  $("#revs").innerHTML=d.reviewers.length?d.reviewers.map(r=>`<tr><td>${esc(r.name)}</td><td>${esc(r.email||'—')}</td><td>${r.approved}</td><td>${r.rejected}</td><td>${r.active?'<span class="ok">On</span>':'<span class="muted">Off</span>'} <button data-rev="${r.id}" data-on="${r.active?0:1}">${r.active?"Switch off":"Switch on"}</button> <button data-newcode="${r.id}">Email new code</button></td></tr>`).join(""):'<tr><td colspan="5" class="muted">No reviewers yet. Add one above.</td></tr>';
+}
+async function loadQueue(){
+  const d=await api("/api/admin/ideas?status=pending");
+  $("#queue").innerHTML=d.ideas.length?d.ideas.map(i=>`<div class="idea"><h3>${esc(i.title)} <span class="pill">${i.total}/100</span></h3>
+    <p><b>Problem:</b> ${esc(i.problem)}<br><b>Idea:</b> ${esc(i.solution)}</p>
+    <p>${Object.entries(i.gates||{}).map(([k,g])=>`<span class="pill ${g.pass?"":"fail"}">${k}: ${g.pass?"pass":"fail"}</span>`).join(" ")}</p>
+    ${(i.evidence||[]).slice(0,4).map(e=>`<div><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">${esc(e.title)}</a> <span class="muted">(${esc(e.source)})</span></div>`).join("")}
+    <div class="row" style="margin-top:10px"><button class="primary" data-act="approved" data-id="${i.id}">Approve</button><button data-act="rejected" data-id="${i.id}">Reject</button></div></div>`).join(""):'<p class="muted">Nothing waiting. New AI ideas appear here after each run.</p>';
+}
+document.addEventListener("click",async e=>{const b=e.target.closest("[data-act]"); if(!b) return; b.disabled=true;
+  try{await api(`/api/admin/ideas/${b.dataset.id}/status`,{method:"POST",body:{status:b.dataset.act}}); load();}catch(err){alert(err.message);}});
+function showInvite(d){
+  if(d.emailed){ $("#newcode").innerHTML=`<div class="msg">Email sent to <b>${esc(d.email)}</b> with the sign-in link and code.</div>`; return; }
+  const link="mailto:"+encodeURIComponent(d.email)+"?subject="+encodeURIComponent(d.subject||"")+"&body="+encodeURIComponent(d.message||"");
+  $("#newcode").innerHTML=`<div class="msg"><b>The site could not send the email by itself.</b> ${esc(d.email_error)} Fix it under Email settings above, or send it yourself:<br>
+    Send ${esc(d.name)} the invitation from your own email instead (the code is shown only once):
+    <div class="row" style="margin:10px 0"><a class="btnlink" href="${link}">Open email to ${esc(d.email)}</a><button type="button" id="copyMsg">Copy the message</button></div>
+    <details><summary>Show the code</summary><code style="font-size:16px;user-select:all">${esc(d.code)}</code></details></div>`;
+  const c=$("#copyMsg"); if(c) c.onclick=()=>{ const t=d.message||""; (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{c.textContent="Copied";},()=>{c.textContent="Select the code above and copy it";}); };
+}
+$("#addRev").onclick=async()=>{ try{ const d=await api("/api/admin/reviewers",{method:"POST",body:{name:$("#rname").value,email:$("#remail").value}});
+  $("#rname").value=""; $("#remail").value=""; showInvite(d); loadRevs(); }
+  catch(e){ $("#newcode").innerHTML=`<div class="msg">${esc(e.message)}</div>`; } };
+document.addEventListener("click",async e=>{const b=e.target.closest("[data-newcode]"); if(!b) return; b.disabled=true;
+  try{ showInvite(await api(`/api/admin/reviewers/${b.dataset.newcode}/new-code`,{method:"POST"})); }catch(err){ $("#newcode").innerHTML=`<div class="msg">${esc(err.message)}</div>`; } b.disabled=false; });
+document.addEventListener("click",async e=>{const b=e.target.closest("[data-rev]"); if(!b) return; b.disabled=true;
+  try{ await api(`/api/admin/reviewers/${b.dataset.rev}/active`,{method:"POST",body:{active:b.dataset.on==="1"}}); loadRevs(); }catch(err){ alert(err.message); }});
+async function run(steps){ try{await api("/api/admin/run",{method:"POST",body:{steps}}); $("#job").textContent="Started. Refresh in a minute or two."; setTimeout(load,15000);}catch(e){$("#job").textContent=e.message;} }
+$("#login").addEventListener("submit",signIn); $("#out").onclick=signOut; $("#runAll").onclick=()=>run(["ingest","engine"]); $("#runIngest").onclick=()=>run(["ingest"]); $("#runEngine").onclick=()=>run(["engine"]);
+if(token) load();
+})();
+</script>
+</body>
+</html>
