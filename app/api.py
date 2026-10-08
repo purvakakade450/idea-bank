@@ -70,6 +70,8 @@ def admin_login():
     user, pw = str(b.get("username") or ""), str(b.get("password") or "")
     if not Config.ADMIN_PASSWORD:
         return jsonify(error="No admin password is set. Add ADMIN_PASSWORD to .env and restart."), 503
+    if Config.SECRET_KEY in ("", "dev", "change-me"):
+        return jsonify(error="Set a long random SECRET_KEY before using the admin page."), 503
     good = hmac.compare_digest(user.strip().lower(), Config.ADMIN_USERNAME.strip().lower()) & \
         hmac.compare_digest(pw, Config.ADMIN_PASSWORD)
     if not good:

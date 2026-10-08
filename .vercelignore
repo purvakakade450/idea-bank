@@ -1,0 +1,7 @@
+.venv
+data
+tests
+.env
+*.pdf
+Dockerfile
+docker-compose.yml

@@ -60,7 +60,8 @@ class Config:
     ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "")
     ADMIN_SESSION_HOURS = _int("ADMIN_SESSION_HOURS", 8)
     ADMIN_TOKEN = os.getenv("ADMIN_TOKEN", "")
-    DATABASE_PATH = os.getenv("DATABASE_PATH", "data/ideabank.db")
+    # On Vercel only /tmp is writable (and it is wiped when the function restarts)
+    DATABASE_PATH = os.getenv("DATABASE_PATH", "/tmp/ideabank.db" if os.getenv("VERCEL") else "data/ideabank.db")
     SECRET_KEY = os.getenv("SECRET_KEY", "dev")
     USER_AGENT = "IdeaBank/1.0 (student project)"
     HTTP_TIMEOUT = _int("HTTP_TIMEOUT", 20)
