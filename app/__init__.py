@@ -31,7 +31,7 @@ def create_app(config=Config):
     def home():
         return send_from_directory(STATIC, "index.html")
 
-    for page in ("why", "how", "team", "ideas"):
+    for page in ("why", "how", "team", "ideas", "about"):
         app.add_url_rule(f"/{page}", endpoint=f"page_{page}",
                          view_func=lambda page=page: send_from_directory(STATIC, f"{page}.html"))
 
