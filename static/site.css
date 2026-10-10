@@ -288,3 +288,27 @@ main>.sec:first-child{border-top:0}
 .explore h3{margin:0 0 6px; font-size:17px}
 .explore p{margin:0; font-size:14.5px; opacity:.9}
 .nav a[aria-current="page"]{color:var(--teal-ink); background:var(--teal-soft)}
+
+/* check my idea */
+.checkgrid{display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:24px; align-items:start}
+@media (max-width:900px){.checkgrid{grid-template-columns:1fr}}
+.qgroup{background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px 22px; margin-bottom:16px}
+.qgroup h3{margin:0 0 4px; font-size:18px} .qgroup .sub{margin:0 0 12px; color:var(--muted); font-size:14px}
+.qrow{padding:12px 0; border-top:1px solid var(--line)} .qrow:first-of-type{border-top:0}
+.qrow p{margin:0 0 8px; font-weight:600; font-size:15px}
+.opts{display:flex; flex-wrap:wrap; gap:8px}
+.opts label{position:relative}
+.opts input{position:absolute; opacity:0; inset:0; cursor:pointer}
+.opts span{display:inline-block; border:1px solid var(--line-strong); background:var(--bg); border-radius:999px; padding:6px 14px; font-size:14px; font-weight:600; cursor:pointer}
+.opts input:checked + span{background:var(--teal-soft); border-color:var(--teal); color:var(--teal-ink)}
+.opts input:focus-visible + span{outline:3px solid var(--teal); outline-offset:2px}
+.field input,.field textarea{width:100%; border:1px solid var(--line-strong); background:var(--bg); border-radius:12px; padding:10px 14px}
+.field label{display:block; font-weight:600; font-size:14px; margin-bottom:4px}
+.result{position:sticky; top:84px; background:var(--surface); border:1px solid var(--line); border-radius:22px; padding:24px; box-shadow:var(--shadow)}
+.result h3{margin:0 0 6px; font-size:22px}
+.verdict{display:inline-block; font-weight:800; font-size:14px; padding:4px 14px; border-radius:999px; border:1px solid; margin-bottom:10px}
+.lens{display:grid; grid-template-columns:110px 1fr 48px; gap:10px; align-items:center; font-size:14px; margin:6px 0}
+.lens .bar{height:9px; background:var(--gray); border-radius:99px; overflow:hidden} .lens .bar i{display:block; height:100%; background:var(--teal)}
+.gate{display:flex; justify-content:space-between; gap:10px; font-size:14px; padding:6px 0; border-top:1px dashed var(--line-strong)}
+.faq details{border-top:1px solid var(--line); padding:14px 0} .faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer; font-weight:700; font-size:17px} .faq p{margin:8px 0 0; color:var(--muted)}

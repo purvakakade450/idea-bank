@@ -31,6 +31,8 @@ const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;"
 const ftag=k=>`<span class="tag ${FIELDS[k]?FIELDS[k].cls:"c-gray"}">${esc(FIELDS[k]?FIELDS[k].label:k)}</span>`;
 function ring(score,label){const r=25,c=2*Math.PI*r,off=c*(1-Math.max(0,Math.min(100,score))/100),col=score>=75?"var(--teal)":score>=50?"var(--ring-mid)":"var(--gray-line)";
   return `<div class="ring" role="img" aria-label="${label?esc(label)+" ":""}${score} out of 100"><svg width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="${r}" fill="none" stroke="var(--line)" stroke-width="6"/><circle cx="30" cy="30" r="${r}" fill="none" stroke="${col}" stroke-width="6" stroke-linecap="round" stroke-dasharray="${c.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}"/></svg><b>${score}</b></div>`;}
+const VERDICT=t=>t>=75?{k:"Build",cls:"c-green",why:"Strong enough to start building. Test it with real customers first."}:t>=50?{k:"Explore",cls:"c-amber",why:"Real potential, but one thing needs testing before you build."}:{k:"Skip",cls:"c-gray",why:"Not worth the time yet. Reshape the strongest part or pick another idea."};
+const vtag=t=>{const v=VERDICT(t); return `<span class="tag ${v.cls}">${v.k}</span>`;};
 const badge=i=>i.origin==="seed"?'<span class="ex-badge">Example</span>':'<span class="live-badge">Live</span>';
 if($("#heroRing")) $("#heroRing").innerHTML=ring(84,"Score");
 
@@ -49,7 +51,7 @@ function card(i){
     <div class="card-top"><div><div class="sector">${esc(i.sector)}${badge(i)}</div><h3>${esc(i.title)}</h3></div>${ring(i.total,"Score")}</div>
     <p class="prob">${esc(i.problem)}</p>
     <div class="facts">${PRODUCT[i.product]||"Mix"} · ${esc(BUDGET[i.budget]||"")} · ${i.hours} team hrs a week for ${i.months} months</div>
-    <div class="meta">${Object.keys(i.roles||{}).map(ftag).join("")}</div></button>`;
+    <div class="meta">${vtag(i.total)}${Object.keys(i.roles||{}).map(ftag).join("")}</div></button>`;
 }
 function renderFeed(){
   if(!$("#ideaGrid")) return;
@@ -67,6 +69,8 @@ document.addEventListener("click",e=>{const el=e.target.closest("[data-id]"); if
 
 /* ================= idea dialog ================= */
 const dlg=$("#dlg");
+const NEXT={need:"Talk to 15 people who face this problem and ask how often it happens and what it costs them.",revenue:"Ask 10 possible customers what they pay today for a workaround, and whether they would pay for yours.",seed:"Write down how this grows past the first town or customer group, and what changes in the next 2 years.",entre:"List the skills and weekly hours your team really has, and how you will reach the first 10 customers.",impact:"Estimate who benefits and how, then ask one expert or user to check it."};
+function weakest(sc){const worst=LENSES.map(l=>({k:l.k,label:l.label,r:(sc[l.k]||0)/l.max})).sort((a,b)=>a.r-b.r)[0]; return `${worst.label} is the lowest area. ${NEXT[worst.k]}`;}
 async function openIdea(id){
   $("#dlgBody").innerHTML=`<p class="note">Loading…</p>`;
   if(typeof dlg.showModal==="function"&&!dlg.open) dlg.showModal(); else dlg.setAttribute("open","");
@@ -75,8 +79,9 @@ async function openIdea(id){
   const metrics=Object.keys(dm).map(f=>`<div><b>${esc(FIELDS[f]?FIELDS[f].label:f)}</b>${Object.entries(dm[f]).map(([k,v])=>`${esc(k)}: ${esc(v)}`).join(" · ")}</div>`).join("");
   $("#dlgBody").innerHTML=`
    <div class="dlg-head"><div><div style="font-size:13px;font-weight:700;color:var(--teal)">${esc(i.sector)}${badge(i)}</div><h2 id="dlgTitle">${esc(i.title)}</h2>
-     <span class="tag ${t>=75?"c-teal":"c-amber"}">${t>=75?"Strong score":"Needs more research"} · ${t} / 100</span></div>
+     <span class="tag ${VERDICT(t).cls}">${VERDICT(t).k} · ${t} / 100</span></div>
      <button class="x" type="button" id="dlgClose" aria-label="Close">✕</button></div>
+   <div class="box c-teal"><h3>Verdict: ${VERDICT(t).k}</h3><p>${VERDICT(t).why}</p><p style="margin-top:6px"><b>Test next:</b> ${weakest(i.scores)}</p></div>
    <div class="two"><div class="box"><h3>Problem statement</h3><p>${esc(i.problem)}</p></div><div class="box"><h3>Business idea</h3><p>${esc(i.solution)}</p></div></div>
    <div class="box"><h3>Where each field could help (suggestions)</h3><div class="roles">${Object.keys(i.roles||{}).map(k=>`<div class="role">${ftag(k)}<span>${esc(i.roles[k])}</span></div>`).join("")}</div>
      <p class="note" style="margin:12px 0 0">${PRODUCT[i.product]||"Mix"} · start budget ${esc(BUDGET[i.budget]||"")} · about ${i.hours} team hours a week for ${i.months} months.</p></div>
